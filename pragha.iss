@@ -1,8 +1,9 @@
 ; Adjust these directories to your compilation and preferences:
 #define BUILD  "Z:\home\matias\Desarrollo\pragha\win32"
 #define MINGW  "Z:\usr\i686-w64-mingw32\sys-root\mingw"
-#define ICON_PATH "Z:\usr\share\icons\oxymentary"
 #define GST_CODECS "c:\gstreamer\1.0\x86"
+
+#define ICON_PATH "Z:\usr\share\icons\oxymentary"
 
 [Setup]
 AppName= Pragha
@@ -10,7 +11,7 @@ AppVerName=Pragha V.1.3.2
 AppVersion=1.3.2
 AppPublisher=Matias De lellis
 AppPublisherURL=https://github.com/matiasdelellis
-AppCopyright=Copyright (C) 2009-2014 Matias De lellis
+AppCopyright=Copyright (C) 2009-2015 Matias De lellis
 AppSupportURL=https://github.com/matiasdelellis/pragha
 AppUpdatesURL=https://github.com/matiasdelellis/pragha
 DefaultDirName={pf}\Pragha
@@ -128,6 +129,8 @@ Source: "{#GST_CODECS}\bin\libgstrtsp-1.0-0.dll"; DestDir: "{app}\bin"; Flags: i
 Source: "{#GST_CODECS}\bin\libgstsdp-1.0-0.dll"; DestDir: "{app}\bin"; Flags: ignoreversion
 Source: "{#GST_CODECS}\bin\libgsttag-1.0-0.dll"; DestDir: "{app}\bin"; Flags: ignoreversion
 Source: "{#GST_CODECS}\bin\libgstvideo-1.0-0.dll"; DestDir: "{app}\bin"; Flags: ignoreversion
+Source: "{#GST_CODECS}\bin\liborc-test-0.4-0.dll"; DestDir: "{app}\bin"; Flags: ignoreversion
+Source: "{#GST_CODECS}\bin\libgmp-10.dll"; DestDir: "{app}\bin"; Flags: ignoreversion
 Source: "{#GST_CODECS}\lib\gstreamer-1.0\libgstadder.dll"; DestDir: "{app}\lib\gstreamer-1.0"; Flags: ignoreversion
 Source: "{#GST_CODECS}\lib\gstreamer-1.0\libgstapp.dll"; DestDir: "{app}\lib\gstreamer-1.0"; Flags: ignoreversion
 Source: "{#GST_CODECS}\lib\gstreamer-1.0\libgstaudioconvert.dll"; DestDir: "{app}\lib\gstreamer-1.0"; Flags: ignoreversion
