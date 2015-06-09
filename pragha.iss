@@ -3,12 +3,10 @@
 #define MINGW  "Z:\usr\i686-w64-mingw32\sys-root\mingw"
 #define GST_CODECS "c:\gstreamer\1.0\x86"
 
-#define ICON_PATH "Z:\usr\share\icons\oxymentary"
-
 [Setup]
 AppName= Pragha
-AppVerName=Pragha V.1.3.2
-AppVersion=1.3.2
+AppVerName=Pragha V.1.3.2.2
+AppVersion=1.3.2.2
 AppPublisher=Matias De lellis
 AppPublisherURL=https://github.com/matiasdelellis
 AppCopyright=Copyright (C) 2009-2015 Matias De lellis
@@ -26,7 +24,7 @@ LicenseFile=licence.txt
 Compression=lzma2/max
 SourceDir=.
 OutputDir=.
-OutputBaseFilename=Pragha 1.3.2
+OutputBaseFilename=Pragha 1.3.2.2
 ChangesAssociations=no
 SetupIconFile="pragha.ico"
 AppId={{1A58C548-142C-4016-9943-6A39EB25BB51}
@@ -48,14 +46,14 @@ Root: HKLM; Subkey: "SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\pragha.
 
 [Components]
 Name: "main"; Description: "Main Files"; Types: full compact custom; Flags: fixed
-Name: "codecsgood"; Description: "Tested Privative Codecs"; Types: fullName: "codecsbad"; Description: "More Privative Codecs"; Types: full
+Name: "codecsgood"; Description: "Tested Privative Codecs"; Types: full
+Name: "codecsbad"; Description: "More Privative Codecs"; Types: full
 
 [Files]
 ; Pragha files
 Source: "{#MINGW}\bin\pragha.exe"; DestDir: "{app}/bin"; DestName: "pragha.exe"
 Source: "pragha.ico"; DestDir: "{app}"; Flags: ignoreversion
 Source: "settings.ini"; DestDir: "{app}\etc\gtk-3.0"; Flags: ignoreversion
-Source: "{#MINGW}\share\pixmaps\pragha\pragha.png"; DestDir: "{app}\share\icons\oxygen\128x128\apps"
 
 Source: "{#MINGW}\share\doc\pragha\README"; DestDir: "{app}"; DestName: "Readme.txt"
 
@@ -102,9 +100,9 @@ Source: "{#MINGW}\lib\gdk-pixbuf-2.0\2.10.0\loaders\libpixbufloader-icns.dll"; D
 Source: "{#MINGW}\lib\gdk-pixbuf-2.0\2.10.0\loaders\libpixbufloader-xbm.dll"; DestDir: "{app}\lib\gdk-pixbuf-2.0\2.10.0\loaders"; Flags: ignoreversion
 ; Gettext
 Source: "{#MINGW}\bin\libasprintf-0.dll"; DestDir: "{app}\bin"; Flags: ignoreversion
-Source: "{#MINGW}\bin\libgettextlib-0-18-3.dll"; DestDir: "{app}\bin"; Flags: ignoreversion
+;Source: "{#MINGW}\bin\libgettextlib-0-18-3.dll"; DestDir: "{app}\bin"; Flags: ignoreversion
 Source: "{#MINGW}\bin\libgettextpo-0.dll"; DestDir: "{app}\bin"; Flags: ignoreversion
-Source: "{#MINGW}\bin\libgettextsrc-0-18-3.dll"; DestDir: "{app}\bin"; Flags: ignoreversion
+;Source: "{#MINGW}\bin\libgettextsrc-0-18-3.dll"; DestDir: "{app}\bin"; Flags: ignoreversion
 Source: "{#MINGW}\bin\libintl-8.dll"; DestDir: "{app}\bin"; Flags: ignoreversion
 ; Glib
 Source: "{#MINGW}\bin\libgio-2.0-0.dll"; DestDir: "{app}\bin"; Flags: ignoreversion
@@ -151,6 +149,7 @@ Source: "{#GST_CODECS}\lib\gstreamer-1.0\libgstvorbis.dll"; DestDir: "{app}\lib\
 Source: "{#MINGW}\bin\libgailutil-3-0.dll"; DestDir: "{app}\bin"; Flags: ignoreversion
 Source: "{#MINGW}\bin\libgdk-3-0.dll"; DestDir: "{app}\bin"; Flags: ignoreversion
 Source: "{#MINGW}\bin\libgtk-3-0.dll"; DestDir: "{app}\bin"; Flags: ignoreversion
+Source: "{#MINGW}\bin\libepoxy-0.dll"; DestDir: "{app}\bin"; Flags: ignoreversion
 Source: "{#MINGW}\lib\gtk-3.0\3.0.0\immodules\im-ti-et.dll"; DestDir: "{app}\lib\gtk-3.0\3.0.0\immodules"; Flags: ignoreversion
 Source: "{#MINGW}\lib\gtk-3.0\3.0.0\immodules\im-cyrillic-translit.dll"; DestDir: "{app}\lib\gtk-3.0\3.0.0\immodules"; Flags: ignoreversion
 Source: "{#MINGW}\lib\gtk-3.0\3.0.0\immodules\im-ti-er.dll"; DestDir: "{app}\lib\gtk-3.0\3.0.0\immodules"; Flags: ignoreversion
@@ -239,8 +238,10 @@ Source: "{#MINGW}\share\glib-2.0\schemas\org.gtk.Settings.ColorChooser.gschema.x
 Source: "{#MINGW}\share\glib-2.0\schemas\gschemas.compiled"; DestDir: "{app}\share\glib-2.0\schemas"; Flags: ignoreversion
 Source: "{#MINGW}\share\glib-2.0\schemas\gschema.dtd"; DestDir: "{app}\share\glib-2.0\schemas"; Flags: ignoreversion
 
+;Icons
+Source: "icons\*"; DestDir: "{app}\share\icons\"; Flags: recursesubdirs
+
 #include "translations.iss"
-#include "icons.iss"
 #include "codecs.iss"
 
 [Icons]
